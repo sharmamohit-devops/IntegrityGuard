@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntegrityGuard - AI Proctoring Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-shield-alt logo-icon"></i>
+                    <span>IntegrityGuard</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#live-interview">Live Interview</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Secure Virtual Interviews & Assessments</h1>
+                <p>AI-powered proctoring platform ensuring integrity and fairness in remote hiring processes</p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn">See Demo</a>
+                    <a href="#contact" class="btn btn-outline">Request Demo</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Advanced Proctoring Features</h2>
+                    <p>Our AI-powered platform addresses all aspects of virtual assessment integrity</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-brain feature-icon"></i>
+                        <h3>Intelligent Behavior Monitoring</h3>
+                        <p>AI analyzes audio-visual feeds to detect suspicious behaviors while distinguishing normal human actions like thinking or looking away momentarily.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-fingerprint feature-icon"></i>
+                        <h3>Unbreachable Identity Verification</h3>
+                        <p>Multi-factor biometric verification with liveness detection prevents impersonation and ensures candidate identity throughout the session.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-lock feature-icon"></i>
+                        <h3>Secure Digital Environment</h3>
+                        <p>Creates a protected "bubble" during tests, blocking unauthorized software, secondary displays, and remote desktop tools.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-chart-pie feature-icon"></i>
+                        <h3>Integrity Auditing & Reporting</h3>
+                        <p>Generates comprehensive trust scores and evidence-based reports for recruiters, saving time while maintaining fairness.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-video feature-icon"></i>
+                        <h3>Live Interview Integration</h3>
+                        <p>Securely conduct live interviews with real-time video calls, chat, and note-taking, all monitored by AI for integrity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="demo" id="demo">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Live Proctoring Demo</h2>
+                    <p>Experience how our AI verifies identities and monitors integrity in real-time</p>
+                </div>
+                <div class="demo-container">
+                    <div class="candidate-view">
+                        <div class="video-feed">
+                            <div class="video-placeholder">
+                                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-55958-614810.jpg&fm=jpg" alt="Candidate Image" class="active">
+                                <video src="mojang.mp4" muted loop class="video-feed"></video>
+                                <div class="scanning-overlay">
+                                    <div class="loader"></div>
+                                    <p id="scanningMessage">Scanning...</p>
+                                </div>
+                            </div>
+                            <div class="monitoring-overlay">
+                                <div class="status-indicators">
+                                    <div class="status">
+                                        <div class="status-dot"></div>
+                                        <span id="identityStatus">Identity Verification in Progress</span>
+                                    </div>
+                                    <div class="status warning">
+                                        <div class="status-dot"></div>
+                                        <span>2 Warnings</span>
+                                    </div>
+                                    <div class="status">
+                                        <div class="status-dot"></div>
+                                        <span>Environment Clean</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <div class="trust-score">Trust Score: <span class="score-value">92%</span></div>
+                            <button class="btn" id="simulateEvent">Simulate Incident</button>
+                            <button class="btn" id="scanMedia">Scan Media</button>
+                        </div>
+                    </div>
+                    <div class="incident-log">
+                        <h3>Incident Log</h3>
+                        <div class="log-items">
+                            <div class="log-item">
+                                <i class="fas fa-check-circle log-icon" style="color: var(--success);"></i>
+                                <div class="log-details">
+                                    <p>Identity verified successfully using facial recognition</p>
+                                    <small>2 minutes ago</small>
+                                </div>
+                            </div>
+                            <div class="log-item">
+                                <i class="fas fa-exclamation-triangle log-icon"></i>
+                                <div class="log-details">
+                                    <p>Multiple faces detected in frame</p>
+                                    <small>1 minute ago</small>
+                                </div>
+                            </div>
+                            <div class="log-item">
+                                <i class="fas fa-check-circle log-icon" style="color: var(--success);"></i>
+                                <div class="log-details">
+                                    <p>Digital environment secured - no unauthorized applications detected</p>
+                                    <small>45 seconds ago</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="live-interview" id="live-interview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Secure Live Interview</h2>
+                    <p>Conduct real-time video call interviews with AI-monitored video, secure chat, and note-taking</p>
+                </div>
+                <div class="interview-container">
+                    <div class="video-grid">
+                        <div class="video-window">
+                            <video id="candidateVideo" autoplay playsinline></video>
+                            <div class="video-label">Candidate</div>
+                            <div class="video-controls">
+                                <button class="btn disabled" id="toggleCandidateVideo"><i class="fas fa-video"></i></button>
+                                <button class="btn disabled" id="toggleCandidateAudio"><i class="fas fa-microphone"></i></button>
+                            </div>
+                        </div>
+                        <div class="video-window">
+                            <video id="hrVideo" autoplay playsinline></video>
+                            <div class="video-label">HR</div>
+                            <div class="video-controls">
+                                <button class="btn" id="toggleHRVideo"><i class="fas fa-video"></i></button>
+                                <button class="btn" id="toggleHRAudio"><i class="fas fa-microphone"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="interview-controls">
+                        <button class="btn" id="startCall">Start Video Call</button>
+                        <button class="btn btn-outline" id="endCall" disabled>End Video Call</button>
+                    </div>
+                    <div class="chat-box">
+                        <h3>Secure Chat</h3>
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-message hr">
+                                <p><strong>HR:</strong> Welcome to the interview! Can you start by telling me about yourself?</p>
+                                <small>Just now</small>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="chatInput" placeholder="Type your message...">
+                            <button class="btn" id="sendMessage">Send</button>
+                        </div>
+                    </div>
+                    <div class="notes-box">
+                        <h3>Interview Notes</h3>
+                        <textarea id="interviewNotes" placeholder="Take notes during the interview..."></textarea>
+                        <button class="btn" id="saveNotes">Save Notes</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-title">
+                    <h2>How IntegrityGuard Works</h2>
+                    <p>Our six-pillar approach ensures comprehensive security and fairness in virtual assessments and interviews</p>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Pre-Session Verification</h3>
+                        <p>Candidate identity is verified using multi-factor authentication, including facial recognition, ID document verification, and liveness detection to prevent impersonation.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Secure Environment Setup</h3>
+                        <p>Our system locks down the testing environment by disabling unauthorized software, secondary displays, and external devices, ensuring a controlled assessment space.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Continuous AI Monitoring</h3>
+                        <p>Advanced AI algorithms monitor audio, video, and screen activity in real-time, flagging suspicious behaviors like unusual eye movements or external voices.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <h3>Real-Time Incident Alerts</h3>
+                        <p>Instant notifications and detailed incident logs alert proctors to potential violations, allowing for immediate intervention if necessary.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <h3>Secure Live Interviews</h3>
+                        <p>Conduct live video call interviews with secure chat and note-taking, all integrated with AI monitoring for real-time integrity checks.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">6</div>
+                        <h3>Comprehensive Reporting</h3>
+                        <p>Post-session, recruiters receive a detailed report with trust scores, video evidence, chat logs, notes, and timestamps of flagged incidents for transparent decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About IntegrityGuard</h3>
+                    <p>IntegrityGuard is a leading AI-powered proctoring platform designed to ensure fairness and security in virtual hiring and assessments. Leveraging cutting-edge AI, biometrics, and secure environment controls, we empower organizations to conduct remote interviews and tests with confidence. Our mission is to uphold integrity in the digital age, providing tools that save time, reduce bias, and maintain trust.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#live-interview">Live Interview</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> support@integrityguard.com</li>
+                        <li><i class="fas fa-phone"></i>+91 9456756556</li>
+                        <li><i class="fas fa-map-marker-alt"></i>123 street near IIT Roorkee Building NO 234</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 IntegrityGuard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
