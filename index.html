@@ -1,15 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntegrityGuard - AI Proctoring Platform</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index1.css">
 </head>
+
 <body>
+    <!-- Video Modal -->
+    <div id="demo-modal" class="demo-modal">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <div class="video-container">
+                <iframe id="demo-video" width="100%" height="400" src="" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
@@ -18,11 +33,12 @@
                     <span>IntegrityGuard</span>
                 </div>
                 <ul class="nav-links">
+                    <li><a href="#problem">Problem</a></li>
                     <li><a href="#features">Features</a></li>
                     <li><a href="#demo">Demo</a></li>
-                    <li><a href="#live-interview">Live Interview</a></li>
+                    <li><a href="#technology">Technology</a></li>
                     <li><a href="#how-it-works">How It Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#live-interview" class="nav-cta">Live Interview</a></li>
                 </ul>
                 <div class="hamburger">
                     <i class="fas fa-bars"></i>
@@ -34,15 +50,46 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Secure Virtual Interviews & Assessments</h1>
-                <p>AI-powered proctoring platform ensuring integrity and fairness in remote hiring processes</p>
-                <div class="hero-buttons">
-                    <a href="#demo" class="btn">See Demo</a>
-                    <a href="#contact" class="btn btn-outline">Request Demo</a>
+                <div class="hero-content">
+                    <h1>Secure Virtual Interviews & Assessments</h1>
+                    <p>AI-powered proctoring platform ensuring integrity and fairness in remote hiring processes</p>
+                    <div class="hero-buttons">
+                        <a href="#demo" class="btn btn-primary"><i class="fas fa-play-circle"></i> See Demo</a>
+                        <a href="#live-interview" class="btn btn-outline"><i class="fas fa-video"></i> Try Live
+                            Interview</a>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <section class="problem" id="problem">
+            <div class="container">
+                <div class="section-title">
+                    <h2>The Growing Problem of Remote Cheating</h2>
+                    <p>As virtual hiring becomes the norm, new cheating methods are undermining the integrity of
+                        technical assessments and interviews.</p>
+                </div>
+                <div class="problem-grid">
+                    <div class="problem-card animate">
+                        <i class="fas fa-user-secret problem-icon"></i>
+                        <h3>Impersonation</h3>
+                        <p>Candidates have others take tests for them, bypassing identity verification with deepfakes or
+                            simple deception.</p>
+                    </div>
+                    <div class="problem-card animate">
+                        <i class="fas fa-desktop problem-icon"></i>
+                        <h3>Screen Sharing</h3>
+                        <p>Real-time collaboration with experts through hidden communication channels and screen sharing
+                            tools.</p>
+                    </div>
+                    <div class="problem-card animate">
+                        <i class="fas fa-robot problem-icon"></i>
+                        <h3>AI Assistance</h3>
+                        <p>Using AI-powered tools and bots to generate answers during coding tests and interviews.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="features" id="features">
             <div class="container">
                 <div class="section-title">
@@ -53,27 +100,31 @@
                     <div class="feature-card">
                         <i class="fas fa-brain feature-icon"></i>
                         <h3>Intelligent Behavior Monitoring</h3>
-                        <p>AI analyzes audio-visual feeds to detect suspicious behaviors while distinguishing normal human actions like thinking or looking away momentarily.</p>
+                        <p>Real-time analysis using YOLOv8 object detection and OpenPose for skeletal tracking to detect
+                            suspicious behaviors.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-fingerprint feature-icon"></i>
                         <h3>Unbreachable Identity Verification</h3>
-                        <p>Multi-factor biometric verification with liveness detection prevents impersonation and ensures candidate identity throughout the session.</p>
+                        <p>Multi-factor biometric verification with liveness detection using FaceNet models and 3D depth
+                            sensing.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-lock feature-icon"></i>
                         <h3>Secure Digital Environment</h3>
-                        <p>Creates a protected "bubble" during tests, blocking unauthorized software, secondary displays, and remote desktop tools.</p>
+                        <p>Creates a protected environment using browser extension APIs to detect unauthorized software
+                            and devices.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-chart-pie feature-icon"></i>
                         <h3>Integrity Auditing & Reporting</h3>
-                        <p>Generates comprehensive trust scores and evidence-based reports for recruiters, saving time while maintaining fairness.</p>
+                        <p>Generates comprehensive trust scores and evidence-based reports for recruiters.</p>
                     </div>
                     <div class="feature-card">
                         <i class="fas fa-video feature-icon"></i>
                         <h3>Live Interview Integration</h3>
-                        <p>Securely conduct live interviews with real-time video calls, chat, and note-taking, all monitored by AI for integrity.</p>
+                        <p>Securely conduct live interviews with real-time video calls using WebRTC with AI monitoring.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -89,7 +140,8 @@
                     <div class="candidate-view">
                         <div class="video-feed">
                             <div class="video-placeholder">
-                                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-55958-614810.jpg&fm=jpg" alt="Candidate Image" class="active">
+                                <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-55958-614810.jpg&fm=jpg"
+                                    alt="Candidate Image" class="active">
                                 <video src="mojang.mp4" muted loop class="video-feed"></video>
                                 <div class="scanning-overlay">
                                     <div class="loader"></div>
@@ -115,29 +167,31 @@
                         </div>
                         <div class="controls">
                             <div class="trust-score">Trust Score: <span class="score-value">92%</span></div>
-                            <button class="btn" id="simulateEvent">Simulate Incident</button>
-                            <button class="btn" id="scanMedia">Scan Media</button>
+                            <button class="btn btn-primary" id="simulateEvent"><i class="fas fa-exclamation-circle"></i>
+                                Simulate Incident</button>
+                            <button class="btn btn-primary" id="scanMedia"><i class="fas fa-search"></i> Scan
+                                Media</button>
                         </div>
                     </div>
                     <div class="incident-log">
                         <h3>Incident Log</h3>
                         <div class="log-items">
-                            <div class="log-item">
-                                <i class="fas fa-check-circle log-icon" style="color: var(--success);"></i>
+                            <div class="log-item success">
+                                <i class="fas fa-check-circle log-icon"></i>
                                 <div class="log-details">
                                     <p>Identity verified successfully using facial recognition</p>
                                     <small>2 minutes ago</small>
                                 </div>
                             </div>
-                            <div class="log-item">
+                            <div class="log-item warning">
                                 <i class="fas fa-exclamation-triangle log-icon"></i>
                                 <div class="log-details">
                                     <p>Multiple faces detected in frame</p>
                                     <small>1 minute ago</small>
                                 </div>
                             </div>
-                            <div class="log-item">
-                                <i class="fas fa-check-circle log-icon" style="color: var(--success);"></i>
+                            <div class="log-item success">
+                                <i class="fas fa-check-circle log-icon"></i>
                                 <div class="log-details">
                                     <p>Digital environment secured - no unauthorized applications detected</p>
                                     <small>45 seconds ago</small>
@@ -149,93 +203,155 @@
             </div>
         </section>
 
-        <section class="live-interview" id="live-interview">
+        <section class="technology" id="technology">
             <div class="container">
                 <div class="section-title">
-                    <h2>Secure Live Interview</h2>
-                    <p>Conduct real-time video call interviews with AI-monitored video, secure chat, and note-taking</p>
+                    <h2>Our Technology Stack</h2>
+                    <p>IntegrityGuard leverages cutting-edge AI and security technologies to ensure assessment integrity
+                    </p>
                 </div>
-                <div class="interview-container">
-                    <div class="video-grid">
-                        <div class="video-window">
-                            <video id="candidateVideo" autoplay playsinline></video>
-                            <div class="video-label">Candidate</div>
-                            <div class="video-controls">
-                                <button class="btn disabled" id="toggleCandidateVideo"><i class="fas fa-video"></i></button>
-                                <button class="btn disabled" id="toggleCandidateAudio"><i class="fas fa-microphone"></i></button>
-                            </div>
-                        </div>
-                        <div class="video-window">
-                            <video id="hrVideo" autoplay playsinline></video>
-                            <div class="video-label">HR</div>
-                            <div class="video-controls">
-                                <button class="btn" id="toggleHRVideo"><i class="fas fa-video"></i></button>
-                                <button class="btn" id="toggleHRAudio"><i class="fas fa-microphone"></i></button>
-                            </div>
-                        </div>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <i class="fas fa-robot tech-icon"></i>
+                        <h3>AI & Machine Learning</h3>
+                        <ul>
+                            <li>YOLOv8 for real-time object detection</li>
+                            <li>OpenPose for skeletal and gaze tracking</li>
+                            <li>FaceNet for facial recognition</li>
+                            <li>LSTM networks for behavioral analysis</li>
+                            <li>Custom anomaly detection algorithms</li>
+                        </ul>
                     </div>
-                    <div class="interview-controls">
-                        <button class="btn" id="startCall">Start Video Call</button>
-                        <button class="btn btn-outline" id="endCall" disabled>End Video Call</button>
+                    <div class="tech-card">
+                        <i class="fas fa-shield-alt tech-icon"></i>
+                        <h3>Security Infrastructure</h3>
+                        <ul>
+                            <li>End-to-end encryption for all data</li>
+                            <li>Secure browser extension environment</li>
+                            <li>Hardware-level security checks</li>
+                            <li>Virtual machine detection algorithms</li>
+                            <li>Real-time screen recording analysis</li>
+                        </ul>
                     </div>
-                    <div class="chat-box">
-                        <h3>Secure Chat</h3>
-                        <div class="chat-messages" id="chatMessages">
-                            <div class="chat-message hr">
-                                <p><strong>HR:</strong> Welcome to the interview! Can you start by telling me about yourself?</p>
-                                <small>Just now</small>
-                            </div>
-                        </div>
-                        <div class="chat-input">
-                            <input type="text" id="chatInput" placeholder="Type your message...">
-                            <button class="btn" id="sendMessage">Send</button>
-                        </div>
-                    </div>
-                    <div class="notes-box">
-                        <h3>Interview Notes</h3>
-                        <textarea id="interviewNotes" placeholder="Take notes during the interview..."></textarea>
-                        <button class="btn" id="saveNotes">Save Notes</button>
+                    <div class="tech-card">
+                        <i class="fas fa-code tech-icon"></i>
+                        <h3>Development Stack</h3>
+                        <ul>
+                            <li>React.js with TypeScript frontend</li>
+                            <li>Node.js backend with Express</li>
+                            <li>Python for AI/ML models</li>
+                            <li>WebRTC for real-time communication</li>
+                            <li>PostgreSQL for data storage</li>
+                            <li>AWS for cloud infrastructure</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section class="how-it-works" id="how-it-works">
             <div class="container">
                 <div class="section-title">
                     <h2>How IntegrityGuard Works</h2>
-                    <p>Our six-pillar approach ensures comprehensive security and fairness in virtual assessments and interviews</p>
+                    <p>Our six-pillar approach ensures comprehensive security and fairness in virtual assessments and
+                        interviews</p>
                 </div>
                 <div class="steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <h3>Pre-Session Verification</h3>
-                        <p>Candidate identity is verified using multi-factor authentication, including facial recognition, ID document verification, and liveness detection to prevent impersonation.</p>
+                        <p>Candidate identity is verified using multi-factor authentication, including facial
+                            recognition and liveness detection.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <h3>Secure Environment Setup</h3>
-                        <p>Our system locks down the testing environment by disabling unauthorized software, secondary displays, and external devices, ensuring a controlled assessment space.</p>
+                        <p>Our system locks down the testing environment by disabling unauthorized software and devices.
+                        </p>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <h3>Continuous AI Monitoring</h3>
-                        <p>Advanced AI algorithms monitor audio, video, and screen activity in real-time, flagging suspicious behaviors like unusual eye movements or external voices.</p>
+                        <p>Advanced AI algorithms monitor audio, video, and screen activity in real-time for suspicious
+                            behaviors.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
                         <h3>Real-Time Incident Alerts</h3>
-                        <p>Instant notifications and detailed incident logs alert proctors to potential violations, allowing for immediate intervention if necessary.</p>
+                        <p>Instant notifications and detailed incident logs alert proctors to potential violations.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">5</div>
                         <h3>Secure Live Interviews</h3>
-                        <p>Conduct live video call interviews with secure chat and note-taking, all integrated with AI monitoring for real-time integrity checks.</p>
+                        <p>Conduct live video call interviews with secure chat and note-taking, monitored by AI.</p>
                     </div>
                     <div class="step">
                         <div class="step-number">6</div>
                         <h3>Comprehensive Reporting</h3>
-                        <p>Post-session, recruiters receive a detailed report with trust scores, video evidence, chat logs, notes, and timestamps of flagged incidents for transparent decision-making.</p>
+                        <p>Post-session reports with trust scores, video evidence, and timestamps for transparent
+                            decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="live-interview" id="live-interview">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Live Interview with Google Meet</h2>
+                    <p>Conduct secure interviews with real-time AI monitoring and Google Meet integration</p>
+                </div>
+                <div class="interview-container">
+                    <div class="video-grid">
+                        <div class="video-window">
+                            <video muted loop>
+                                <source src="candidate.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-label">Candidate</div>
+                            <div class="video-controls">
+                                <button id="muteCandidate"><i class="fas fa-microphone"></i></button>
+                                <button id="videoOffCandidate"><i class="fas fa-video"></i></button>
+                            </div>
+                        </div>
+                        <div class="video-window">
+                            <video muted loop>
+                                <source src="hr.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-label">HR</div>
+                            <div class="video-controls">
+                                <button id="muteHR"><i class="fas fa-microphone"></i></button>
+                                <button id="videoOffHR"><i class="fas fa-video"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="interview-controls">
+                        <button class="btn btn-primary" id="startGoogleMeet"><i class="fas fa-video"></i> Start Google
+                            Meet</button>
+                        <button class="btn btn-primary" id="shareScreen"><i class="fas fa-desktop"></i> Share
+                            Screen</button>
+                        <button class="btn" id="endCall"><i class="fas fa-phone-slash"></i> End Call</button>
+                    </div>
+                    <div class="chat-box">
+                        <h3>Interview Chat</h3>
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="chat-message hr">
+                                <p>HR: Welcome to the interview! Let's begin with your introduction.</p>
+                                <small>10:00 AM</small>
+                            </div>
+                            <div class="chat-message">
+                                <p>Candidate: Thank you! I'm excited to be here.</p>
+                                <small>10:02 AM</small>
+                            </div>
+                        </div>
+                        <div class="chat-input">
+                            <input type="text" id="chatInput" placeholder="Type your message...">
+                            <button class="btn btn-primary" id="sendMessage"><i class="fas fa-paper-plane"></i>
+                                Send</button>
+                        </div>
+                    </div>
+                    <div class="notes-box">
+                        <h3>Interview Notes</h3>
+                        <textarea id="interviewNotes" placeholder="Take notes during the interview..."></textarea>
+                        <button class="btn btn-primary" id="saveNotes"><i class="fas fa-save"></i> Save Notes</button>
                     </div>
                 </div>
             </div>
@@ -247,24 +363,27 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>About IntegrityGuard</h3>
-                    <p>IntegrityGuard is a leading AI-powered proctoring platform designed to ensure fairness and security in virtual hiring and assessments. Leveraging cutting-edge AI, biometrics, and secure environment controls, we empower organizations to conduct remote interviews and tests with confidence. Our mission is to uphold integrity in the digital age, providing tools that save time, reduce bias, and maintain trust.</p>
+                    <p>IntegrityGuard is a leading AI-powered proctoring platform designed to ensure fairness and
+                        security in virtual hiring and assessments.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
+                        <li><a href="#problem">Problem</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#demo">Demo</a></li>
-                        <li><a href="#live-interview">Live Interview</a></li>
+                        <li><a href="#technology">Technology</a></li>
                         <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a href="#live-interview">Live Interview</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-envelope"></i> support@integrityguard.com</li>
-                        <li><i class="fas fa-phone"></i>+91 9456756556</li>
-                        <li><i class="fas fa-map-marker-alt"></i>123 street near IIT Roorkee Building NO 234</li>
+                        <li><i class="fas fa-envelope"></i> <a
+                                href="mailto:support@integrityguard.com">support@integrityguard.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+919456756556">+91 9456756556</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Street, Near IIT Roorkee, Building No. 234</li>
                     </ul>
                 </div>
             </div>
@@ -275,4 +394,6 @@
     </footer>
     <script src="index.js"></script>
 </body>
+
 </html>
+
